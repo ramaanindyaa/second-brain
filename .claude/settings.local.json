@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "mcp__claude-in-chrome__tabs_context_mcp",
+      "mcp__playwright__browser_navigate",
+      "Bash(git init *)",
+      "Bash(git add *)"
+    ]
+  }
+}

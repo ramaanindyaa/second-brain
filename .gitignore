@@ -1,0 +1,11 @@
+# Obsidian local UI state (not meaningful to version)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+
+# Sensitive raw sources — keep folder structure, exclude actual content
+client-wiki/raw/*
+!client-wiki/raw/.gitkeep
+finance-wiki/raw/*
+!finance-wiki/raw/.gitkeep
+
+.DS_Store
