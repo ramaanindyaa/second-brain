@@ -21,8 +21,9 @@ yang identik.
 |---|---|---|
 | [medium-wiki/](medium-wiki/CLAUDE.md) | Riset artikel Medium (historical journalism, gaya Rama Anindya) | initialized, 0 sumber |
 | [career-wiki/](career-wiki/CLAUDE.md) | Karier AI Engineering (roadmap, riset tools) | initialized, 0 sumber |
-| [client-wiki/](client-wiki/CLAUDE.md) | Freelance WordPress (konteks per-klien) | initialized, 0 sumber |
+| [client-wiki/](client-wiki/CLAUDE.md) | Freelance WordPress (konteks per-klien eksternal) | initialized, 0 sumber |
 | [finance-wiki/](finance-wiki/CLAUDE.md) | Personal finance (dana darurat, alokasi) | initialized, 0 sumber |
+| [nexana-studio-wiki/](nexana-studio-wiki/CLAUDE.md) | Brand identity & materi bisnis Nexana Studio (milik sendiri, bukan klien) | initialized, 1 sumber |
 
 ## Struktur Setiap Wiki (identik di semua domain)
 

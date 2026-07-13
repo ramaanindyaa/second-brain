@@ -13,7 +13,7 @@ Belum ada sumber yang di-ingest. Halaman ini terisi otomatis setiap kali proses
 INGEST dijalankan (lihat [CLAUDE.md](../CLAUDE.md)).
 
 ## Clients
-_(kosong)_
+_(kosong — belum ada klien eksternal yang di-ingest)_
 
 ## Concepts (pola desain/copy reusable)
 _(kosong)_

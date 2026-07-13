@@ -11,8 +11,9 @@ ingest sumber apa pun.
 
 - [[medium-wiki/wiki/index|Riset Medium]] — historical journalism, gaya Rama Anindya
 - [[career-wiki/wiki/index|Karier AI Engineering]] — roadmap & riset tools
-- [[client-wiki/wiki/index|Freelance WordPress]] — konteks per-klien
+- [[client-wiki/wiki/index|Freelance WordPress]] — konteks per-klien eksternal
 - [[finance-wiki/wiki/index|Personal Finance]] — dana darurat & alokasi
+- [[nexana-studio-wiki/wiki/index|Nexana Studio]] — brand identity & materi bisnis milik sendiri
 
 ## Cara Kerja Sehari-hari
 
