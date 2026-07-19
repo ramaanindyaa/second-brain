@@ -44,4 +44,7 @@ menit".
 > Sebelum eksperimen besar: `snapnow "deskripsi sebelum eksperimen"`. Ini bisa
 > menyelamatkan sistem kalau ada yang salah.
 
-Command detail dan setup awal ada di [[snapper-grub-btrfs]].
+Command detail dan setup awal ada di [[snapper-grub-btrfs]], termasuk
+tuning `NUMBER_LIMIT` supaya jumlah snapshot tidak numpuk tak terkendali
+saat update dilakukan sering (prasyarat untuk
+[[automated-maintenance-systemd-timer]]).

@@ -30,7 +30,9 @@ Lihat juga [progress.md](progress.md) untuk tracker belajar.
 - [btrfs-snapshot-rollback](concepts/btrfs-snapshot-rollback.md) — konsep jaring pengaman snapshot
 - [x86-64-v3-compilation](concepts/x86-64-v3-compilation.md) — kompilasi untuk CPU modern
 - [system-maintenance-cachyos](concepts/system-maintenance-cachyos.md) — rutinitas & troubleshooting
+- [automated-maintenance-systemd-timer](concepts/automated-maintenance-systemd-timer.md) — automasi maintenance mingguan via systemd user timer + sudoers whitelist
 
 ## Sources
 
 - [cachyos-wiki](sources/cachyos-wiki.md) — dokumentasi setup lengkap HP Pavilion Plus 14
+- [vira-maintain-automation-cachyos](sources/vira-maintain-automation-cachyos.md) — setup automasi maintenance mingguan (systemd timer, sudoers, tuning snapper)

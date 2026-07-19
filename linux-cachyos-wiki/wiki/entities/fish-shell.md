@@ -4,7 +4,7 @@ title: "Fish Shell"
 description: "Shell default user di CachyOS, dengan alias command center custom ('VIRA')"
 tags: [entity, shell]
 timestamp: 2026-07-19
-sources: [raw/cachyos-wiki.md]
+sources: [raw/cachyos-wiki.md, raw/vira-maintain-automation-cachyos.md]
 ---
 
 # Fish Shell
@@ -24,8 +24,8 @@ source /usr/share/cachyos-fish-config/cachyos-config.fish
 | Alias | Command | Fungsi |
 |---|---|---|
 | `update` | `paru -Syu && flatpak update` | Update semua |
-| `maintain` | `paru -Syu && flatpak update && sudo paccache -r && sudo journalctl --vacuum-time=2weeks && rm -rf ~/.cache/paru/` | Update + cleanup ringan (weekly) |
-| `cleanup` | `sudo paccache -r && pacman -Qtdq \| sudo pacman -Rns - && flatpak uninstall --unused && sudo journalctl --vacuum-time=2weeks && rm -rf ~/.cache/*` | Nuclear cleanup (monthly) |
+| `cleanup` | `sudo find /var/cache/pacman/pkg -maxdepth 1 -type d -name "download-*" -exec rm -rf {} + && sudo paccache -r && paru -Sc --noconfirm && { pacman -Qtdq \| sudo pacman -Rns - 2>/dev/null \|\| true; } && flatpak uninstall --unused && sudo journalctl --vacuum-time=2weeks && rm -rf ~/.cache/* && sudo snapper -c root cleanup number` | Deep cleanup |
+| `maintain` | `paru -Syu && flatpak update && sudo find /var/cache/pacman/pkg -maxdepth 1 -type d -name "download-*" -exec rm -rf {} + && sudo paccache -r && paru -Sc --noconfirm && sudo journalctl --vacuum-time=2weeks && rm -rf ~/.cache/* && sudo snapper -c root cleanup number` | Update + cleanup sekaligus (weekly, sekarang juga di-automasi — lihat bawah) |
 | `install` | `paru -S` | Install package |
 | `remove` | `sudo pacman -Rns` | Hapus package + dependency |
 | `search` | `paru -Ss` | Cari package |
@@ -51,6 +51,21 @@ source /usr/share/cachyos-fish-config/cachyos-config.fish
 
 Isi lengkap `config.fish` (verbatim) ada di
 [raw/cachyos-wiki.md](../../raw/cachyos-wiki.md) bagian "Fish Shell & Aliases".
+Command persis `cleanup`/`maintain` di atas dikonfirmasi ulang (dan
+diperbarui) di
+[raw/vira-maintain-automation-cachyos.md](../../raw/vira-maintain-automation-cachyos.md).
+
+## Alias `maintain` Sekarang Juga Ter-Automasi
+
+Selain dipakai manual, logic `maintain` di-porting jadi script
+`~/.local/bin/vira-maintain.sh` yang jalan otomatis tiap Minggu 09:00
+lewat systemd user timer — lihat
+[[automated-maintenance-systemd-timer]] untuk setup lengkap.
+
+> ⚠️ **Risiko drift**: alias `maintain` (manual, di atas) dan script
+> `vira-maintain.sh` (otomatis) adalah 2 salinan logic yang tidak saling
+> memanggil. Kalau salah satu diedit (nambah step baru dll), yang lain
+> harus diupdate manual — belum dikonsolidasi.
 
 ## Reload Config
 

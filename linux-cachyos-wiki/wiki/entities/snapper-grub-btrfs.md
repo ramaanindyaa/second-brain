@@ -4,7 +4,7 @@ title: "Snapper & grub-btrfs"
 description: "Tooling snapshot Btrfs otomatis dan integrasinya ke boot menu GRUB"
 tags: [entity, tool, snapshot, btrfs]
 timestamp: 2026-07-19
-sources: [raw/cachyos-wiki.md]
+sources: [raw/cachyos-wiki.md, raw/vira-maintain-automation-cachyos.md]
 ---
 
 # Snapper & grub-btrfs
@@ -67,3 +67,37 @@ sudo snapper rollback [nomor]
 > Snapper adalah jaring pengaman. Sebelum eksperimen besar:
 > `snapnow "deskripsi sebelum eksperimen"` — ini bisa menyelamatkan sistem
 > kalau ada yang salah.
+
+## Tuning NUMBER_LIMIT (Prasyarat Automasi Maintenance)
+
+Snapshot bisa numpuk cepat kalau update dilakukan hampir harian — tiap
+`pacman -Syu` bikin sepasang snapshot `pre`/`post` (via `snap-pac`). Pernah
+ketemu ~54 snapshot padahal `NUMBER_LIMIT` default cuma 50.
+[raw/vira-maintain-automation-cachyos.md](../../raw/vira-maintain-automation-cachyos.md)
+
+```bash
+sudo snapper -c root set-config NUMBER_LIMIT=40 NUMBER_LIMIT_IMPORTANT=15 TIMELINE_LIMIT_HOURLY=0
+
+sudo snapper -c root cleanup number
+```
+
+Alasan angka:
+- `NUMBER_LIMIT=40` — cukup untuk ~2-3 minggu rollback history tanpa
+  nyimpen berlebihan.
+- `NUMBER_LIMIT_IMPORTANT=15` — dibiarkan, sudah pas untuk snapshot yang
+  ditandai `important=yes` (mis. snapshot instalasi awal).
+- `TIMELINE_LIMIT_HOURLY=0` — sebelumnya 5 tapi jadi *dead config* karena
+  `TIMELINE_CREATE=no` (snapshot berbasis event pre/post-update lebih
+  berguna daripada snapshot berbasis waktu buta untuk rolling release).
+  Dinolin biar config bersih.
+
+Verifikasi:
+```bash
+sudo snapper list | wc -l
+sudo snapper -c root get-config
+```
+
+Hasil: 54 → 44 snapshot (settle ke 40 setelah `NUMBER_MIN_AGE` 1800 detik
+terlewati). Tuning ini jadi prasyarat sebelum setup
+[[automated-maintenance-systemd-timer]], karena `maintain` otomatis
+mingguan bikin `snapper -c root cleanup number` jadi bagian rutin.

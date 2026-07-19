@@ -21,6 +21,7 @@ sampai mana".
 | Filesystem Btrfs & snapshot/rollback (snapper, grub-btrfs) | done | 2026-07-19 | [snapper-grub-btrfs](entities/snapper-grub-btrfs.md), [btrfs-snapshot-rollback](concepts/btrfs-snapshot-rollback.md) |
 | Desktop environment/WM setup & customization | done | 2026-07-19 | [kde-plasma](entities/kde-plasma.md) |
 | System maintenance (log, systemd services, cleanup, troubleshooting umum) | done | 2026-07-19 | [system-maintenance-cachyos](concepts/system-maintenance-cachyos.md), [tlp](entities/tlp.md), [thermald](entities/thermald.md) |
+| Automasi maintenance (systemd user timer, sudoers unattended, tuning snapshot limit) | done | 2026-07-19 | [automated-maintenance-systemd-timer](concepts/automated-maintenance-systemd-timer.md), [snapper-grub-btrfs](entities/snapper-grub-btrfs.md) |
 | Performance tuning khas CachyOS (scx scheduler, kernel pilihan, gaming) | done | 2026-07-19 | [x86-64-v3-compilation](concepts/x86-64-v3-compilation.md) |
 
 Catatan: user mengonfirmasi (2026-07-19) bahwa seluruh setup di

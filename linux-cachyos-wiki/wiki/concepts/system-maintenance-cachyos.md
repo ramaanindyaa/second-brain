@@ -5,7 +5,7 @@ description: "Rutinitas maintenance mingguan/bulanan dan solusi error umum di Ca
 tags: [concept, maintenance, troubleshooting]
 skill_level: beginner
 timestamp: 2026-07-19
-sources: [raw/cachyos-wiki.md]
+sources: [raw/cachyos-wiki.md, raw/vira-maintain-automation-cachyos.md]
 ---
 
 # System Maintenance & Troubleshooting CachyOS
@@ -15,10 +15,13 @@ solusi error yang sudah pernah ditemui. [raw/cachyos-wiki.md](../../raw/cachyos-
 
 ## Rutinitas
 
-| Frekuensi | Command (alias) | Isi |
+| Alias | Frekuensi Ideal | Alasan |
 |---|---|---|
-| Weekly | `update` | `paru -Syu && flatpak update` |
-| Monthly | `maintain` atau `cleanup` | Update + cleanup ringan, atau nuclear cleanup penuh |
+| `update` standalone | Hanya kalau ada security patch urgent / butuh versi terbaru sebuah paket | Update harian bikin snapshot numpuk 2x lebih cepat dari perlu, dan naikin risiko ketemu update yang belum matang |
+| `cleanup` standalone | Reaktif — trigger dari `syscheck`/`diskusage` kalau disk mulai penuh | Nggak ada gunanya cleanup kalau cache belum sempat numpuk |
+| `maintain` | **Sekali seminggu**, sekarang **ter-automasi** tiap Minggu 09:00 lewat systemd user timer — lihat [[automated-maintenance-systemd-timer]] | Gabungan update + cleanup penuh dalam satu tembakan |
+
+[raw/vira-maintain-automation-cachyos.md](../../raw/vira-maintain-automation-cachyos.md)
 
 Aturan dari user (penting untuk rolling release, lihat [[rolling-release]]):
 > Jangan skip update lebih dari 2 minggu — hindari partial upgrade issues.
@@ -109,4 +112,5 @@ systemctl status ufw          # firewall
 systemctl status docker       # container runtime
 systemctl status snapper-*    # lihat [[snapper-grub-btrfs]]
 systemctl status grub-btrfs
+systemctl --user status vira-maintain.timer   # lihat [[automated-maintenance-systemd-timer]]
 ```
