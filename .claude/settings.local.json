@@ -11,7 +11,12 @@
       "Bash(mkdir -p /home/rama/Documents/second-brain/content-creator-wiki/wiki/entities/platforms)",
       "Bash(mkdir -p /home/rama/Documents/second-brain/content-creator-wiki/wiki/concepts)",
       "Bash(mkdir -p /home/rama/Documents/second-brain/content-creator-wiki/wiki/sources)",
-      "Bash(touch /home/rama/Documents/second-brain/content-creator-wiki/raw/.gitkeep)"
+      "Bash(touch /home/rama/Documents/second-brain/content-creator-wiki/raw/.gitkeep)",
+      "Bash(mkdir -p /home/rama/Documents/second-brain/linux-cachyos-wiki/raw)",
+      "Bash(mkdir -p /home/rama/Documents/second-brain/linux-cachyos-wiki/wiki/entities)",
+      "Bash(mkdir -p /home/rama/Documents/second-brain/linux-cachyos-wiki/wiki/concepts)",
+      "Bash(mkdir -p /home/rama/Documents/second-brain/linux-cachyos-wiki/wiki/sources)",
+      "Bash(touch /home/rama/Documents/second-brain/linux-cachyos-wiki/raw/.gitkeep)"
     ]
   }
 }

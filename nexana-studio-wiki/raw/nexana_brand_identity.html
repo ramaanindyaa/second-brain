@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Nexana Studio — Brand Identity Guide</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy: #1B2A4A;
+    --navy-deep: #101B33;
+    --amber: #F2994A;
+    --amber-deep: #D9782F;
+    --cream: #F7F5F2;
+    --card: #EEEBE4;
+    --charcoal: #2A2A28;
+    --line: rgba(27,42,74,0.12);
+    --serif-display: 'Plus Jakarta Sans', sans-serif;
+    --body: 'Inter', sans-serif;
+    --mono: 'JetBrains Mono', monospace;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    background:var(--cream);
+    color:var(--charcoal);
+    font-family:var(--body);
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+  ::selection{ background:var(--amber); color:var(--navy-deep); }
+
+  .wrap{ max-width:1040px; margin:0 auto; padding:0 32px; }
+
+  /* NAV */
+  nav{
+    position:sticky; top:0; z-index:50;
+    background:rgba(247,245,242,0.88);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav .wrap{ display:flex; align-items:center; justify-content:space-between; height:64px; }
+  .nav-mark{ display:flex; align-items:center; gap:10px; font-family:var(--serif-display); font-weight:800; font-size:17px; color:var(--navy); }
+  .nav-mark svg{ width:22px; height:22px; }
+  .nav-links{ display:flex; gap:28px; list-style:none; }
+  .nav-links a{ color:var(--navy); opacity:0.6; text-decoration:none; font-size:13px; font-weight:600; letter-spacing:0.02em; transition:opacity .2s; }
+  .nav-links a:hover{ opacity:1; }
+  @media (max-width:720px){ .nav-links{ display:none; } }
+
+  /* HERO */
+  .hero{ padding:120px 0 100px; position:relative; overflow:hidden; }
+  .eyebrow{
+    font-family:var(--mono); font-size:12px; letter-spacing:0.12em; text-transform:uppercase;
+    color:var(--amber-deep); font-weight:500; margin-bottom:20px; display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{ content:''; width:22px; height:1px; background:var(--amber-deep); }
+  h1.brand{
+    font-family:var(--serif-display); font-weight:800; letter-spacing:-0.03em;
+    font-size:clamp(48px,8vw,88px); line-height:0.98; color:var(--navy);
+  }
+  .hero-tagline{
+    font-family:var(--serif-display); font-weight:500; font-style:italic;
+    font-size:clamp(20px,3vw,28px); color:var(--amber-deep); margin-top:18px;
+  }
+  .hero-desc{ max-width:560px; margin-top:28px; font-size:17px; color:var(--charcoal); opacity:0.85; }
+  .nexus-canvas{ position:absolute; right:-60px; top:60px; width:440px; height:440px; opacity:0.9; }
+  @media (max-width:900px){ .nexus-canvas{ display:none; } }
+
+  section{ padding:88px 0; border-top:1px solid var(--line); }
+  .section-head{ display:flex; align-items:baseline; gap:16px; margin-bottom:44px; }
+  .section-num{ font-family:var(--mono); font-size:13px; color:var(--amber-deep); font-weight:500; }
+  h2{ font-family:var(--serif-display); font-size:clamp(28px,4vw,38px); font-weight:700; color:var(--navy); letter-spacing:-0.02em; }
+  .lede{ max-width:620px; color:var(--charcoal); opacity:0.75; font-size:16px; margin-bottom:36px; }
+
+  /* Foundation grid */
+  .grid-4{ display:grid; grid-template-columns:repeat(4,1fr); gap:1px; background:var(--line); border:1px solid var(--line); border-radius:14px; overflow:hidden; }
+  @media (max-width:800px){ .grid-4{ grid-template-columns:repeat(2,1fr); } }
+  .cell{ background:var(--cream); padding:28px 24px; }
+  .cell h4{ font-family:var(--serif-display); color:var(--navy); font-size:15px; margin-bottom:10px; }
+  .cell p{ font-size:14px; opacity:0.75; }
+
+  .purpose-block{ display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-bottom:36px; }
+  @media (max-width:720px){ .purpose-block{ grid-template-columns:1fr; } }
+  .purpose-card{ background:var(--navy); color:var(--cream); border-radius:16px; padding:32px; }
+  .purpose-card h3{ font-family:var(--serif-display); font-size:13px; text-transform:uppercase; letter-spacing:0.1em; color:var(--amber); margin-bottom:14px; }
+  .purpose-card p{ font-size:15px; opacity:0.92; }
+
+  /* Positioning statement */
+  .positioning{
+    background:var(--card); border-left:4px solid var(--amber); border-radius:4px 14px 14px 4px;
+    padding:36px 40px; font-family:var(--serif-display); font-size:clamp(18px,2.4vw,22px); font-weight:600;
+    color:var(--navy-deep); line-height:1.5;
+  }
+  .positioning .hi{ color:var(--amber-deep); }
+  .short-pitch{ margin-top:20px; font-family:var(--body); font-style:italic; font-size:15px; color:var(--charcoal); opacity:0.8; }
+
+  /* Archetype */
+  .archetype-row{ display:flex; gap:20px; flex-wrap:wrap; margin-bottom:32px; }
+  .arche-tag{
+    background:var(--navy); color:var(--cream); padding:10px 20px; border-radius:100px;
+    font-size:14px; font-weight:600; display:flex; align-items:center; gap:8px;
+  }
+  .arche-tag span{ color:var(--amber); }
+  .traits{ display:grid; grid-template-columns:repeat(5,1fr); gap:14px; }
+  @media (max-width:800px){ .traits{ grid-template-columns:repeat(2,1fr); } }
+  .trait{ text-align:center; padding:22px 12px; background:var(--card); border-radius:12px; }
+  .trait .num{ font-family:var(--mono); font-size:11px; color:var(--amber-deep); }
+  .trait .name{ font-family:var(--serif-display); font-weight:700; font-size:14px; color:var(--navy); margin-top:6px; }
+
+  /* Persona */
+  .persona{ display:flex; gap:32px; align-items:flex-start; background:var(--card); border-radius:16px; padding:36px; }
+  @media (max-width:720px){ .persona{ flex-direction:column; } }
+  .persona-avatar{
+    flex-shrink:0; width:84px; height:84px; border-radius:50%; background:var(--navy);
+    display:flex; align-items:center; justify-content:center; font-family:var(--serif-display);
+    color:var(--amber); font-weight:800; font-size:28px;
+  }
+  .persona-body h4{ font-family:var(--serif-display); font-size:20px; color:var(--navy); margin-bottom:12px; }
+  .persona-facts{ display:grid; grid-template-columns:1fr 1fr; gap:12px 28px; margin-top:16px; }
+  .persona-facts div b{ display:block; font-size:12px; text-transform:uppercase; letter-spacing:0.05em; color:var(--amber-deep); margin-bottom:4px; }
+  .persona-facts div p{ font-size:14px; }
+
+  /* Voice do/dont */
+  .chat-row{ display:grid; grid-template-columns:1fr 1fr; gap:20px; margin-bottom:16px; }
+  @media (max-width:720px){ .chat-row{ grid-template-columns:1fr; } }
+  .bubble{ padding:18px 20px; border-radius:14px; font-size:14.5px; position:relative; }
+  .bubble.do{ background:#E9F0EA; border:1px solid #b9d4bd; }
+  .bubble.dont{ background:#F5E9E7; border:1px solid #e0b8b2; }
+  .bubble .tag{ font-family:var(--mono); font-size:10px; text-transform:uppercase; letter-spacing:0.08em; font-weight:600; display:block; margin-bottom:8px; }
+  .bubble.do .tag{ color:#3f7a48; }
+  .bubble.dont .tag{ color:#a34438; }
+
+  /* Tagline cards */
+  .tagline-grid{ display:grid; grid-template-columns:repeat(2,1fr); gap:16px; }
+  @media (max-width:720px){ .tagline-grid{ grid-template-columns:1fr; } }
+  .tagline-card{ background:var(--cream); border:1.5px solid var(--line); border-radius:12px; padding:22px 24px; position:relative; }
+  .tagline-card.rec{ border-color:var(--amber); background:#FFF7EE; }
+  .tagline-card .rec-badge{ position:absolute; top:-10px; right:16px; background:var(--amber); color:var(--navy-deep); font-size:11px; font-weight:700; padding:3px 10px; border-radius:100px; }
+  .tagline-card p{ font-family:var(--serif-display); font-weight:700; font-size:17px; color:var(--navy); }
+
+  /* Visual identity: colors */
+  .swatches{ display:grid; grid-template-columns:repeat(5,1fr); gap:14px; margin-bottom:44px; }
+  @media (max-width:800px){ .swatches{ grid-template-columns:repeat(2,1fr); } }
+  .swatch{ border-radius:12px; overflow:hidden; border:1px solid var(--line); }
+  .swatch .fill{ height:76px; }
+  .swatch .label{ background:var(--cream); padding:10px 12px; }
+  .swatch .label b{ display:block; font-size:12px; font-family:var(--serif-display); color:var(--navy); }
+  .swatch .label span{ font-family:var(--mono); font-size:10.5px; opacity:0.6; }
+
+  .type-specimen{ display:grid; grid-template-columns:1fr 1fr; gap:32px; margin-bottom:20px;}
+  @media (max-width:720px){ .type-specimen{ grid-template-columns:1fr; } }
+  .type-card{ background:var(--card); border-radius:14px; padding:30px; }
+  .type-card .lbl{ font-family:var(--mono); font-size:11px; text-transform:uppercase; letter-spacing:0.08em; color:var(--amber-deep); margin-bottom:14px; }
+  .type-card .sample{ font-family:var(--serif-display); font-weight:700; font-size:34px; color:var(--navy); line-height:1.1; }
+  .type-card.body-font .sample{ font-family:var(--body); font-weight:500; font-size:17px; color:var(--charcoal); }
+
+  /* Pillars */
+  .pillars{ display:grid; grid-template-columns:repeat(2,1fr); gap:20px; }
+  @media (max-width:720px){ .pillars{ grid-template-columns:1fr; } }
+  .pillar{ padding:26px; background:var(--navy); color:var(--cream); border-radius:14px; }
+  .pillar .pnum{ font-family:var(--mono); color:var(--amber); font-size:12px; margin-bottom:10px; display:block; }
+  .pillar p{ font-family:var(--serif-display); font-weight:600; font-size:16px; }
+
+  /* Story */
+  blockquote{
+    font-family:var(--serif-display); font-size:clamp(18px,2.6vw,23px); font-weight:500; color:var(--navy-deep);
+    line-height:1.6; border-left:3px solid var(--amber); padding-left:28px; font-style:italic;
+  }
+
+  /* checklist */
+  .checklist{ list-style:none; }
+  .checklist li{ display:flex; gap:12px; padding:14px 0; border-bottom:1px solid var(--line); font-size:14.5px; }
+  .checklist li::before{ content:'→'; color:var(--amber-deep); font-weight:700; }
+
+  footer{ padding:60px 0 100px; text-align:center; }
+  footer p{ font-size:13px; opacity:0.5; font-family:var(--mono); }
+</style>
+</head>
+<body>
+
+<nav>
+  <div class="wrap">
+    <div class="nav-mark">
+      <svg viewBox="0 0 24 24" fill="none"><circle cx="5" cy="5" r="3" fill="#F2994A"/><circle cx="19" cy="19" r="3" fill="#1B2A4A"/><circle cx="19" cy="5" r="2" fill="#1B2A4A" opacity="0.4"/><line x1="5" y1="5" x2="19" y2="19" stroke="#1B2A4A" stroke-width="1.5"/><line x1="5" y1="5" x2="19" y2="5" stroke="#1B2A4A" stroke-width="1.5" opacity="0.4"/></svg>
+      Nexana Studio
+    </div>
+    <ul class="nav-links">
+      <li><a href="#fondasi">Fondasi</a></li>
+      <li><a href="#personality">Kepribadian</a></li>
+      <li><a href="#voice">Voice</a></li>
+      <li><a href="#visual">Visual</a></li>
+      <li><a href="#pillars">Messaging</a></li>
+    </ul>
+  </div>
+</nav>
+
+<header class="hero">
+  <div class="wrap">
+    <div class="eyebrow">Brand Identity Guide</div>
+    <h1 class="brand">Nexana<br>Studio</h1>
+    <div class="hero-tagline">"Toko Anda, Sistemnya Kami."</div>
+    <p class="hero-desc">Partner digital untuk UMKM retail yang ingin naik kelas — dari website & katalog sampai sistem yang benar-benar dipakai. Dokumen ini fondasi cara kami bicara, terlihat, dan berpikir.</p>
+  </div>
+  <svg class="nexus-canvas" viewBox="0 0 400 400" fill="none">
+    <g stroke="#1B2A4A" stroke-width="1" opacity="0.35">
+      <line x1="80" y1="320" x2="320" y2="80"/>
+      <line x1="80" y1="320" x2="240" y2="150"/>
+      <line x1="150" y1="260" x2="320" y2="80"/>
+      <line x1="80" y1="320" x2="150" y2="260"/>
+    </g>
+    <circle cx="80" cy="320" r="14" fill="#1B2A4A"/>
+    <circle cx="150" cy="260" r="7" fill="#1B2A4A" opacity="0.5"/>
+    <circle cx="240" cy="150" r="9" fill="#1B2A4A" opacity="0.7"/>
+    <circle cx="320" cy="80" r="16" fill="#F2994A"/>
+  </svg>
+</header>
+
+<section id="fondasi">
+  <div class="wrap">
+    <div class="section-head"><span class="section-num">01</span><h2>Fondasi Brand</h2></div>
+    <p class="lede">Kenapa Nexana Studio ada, dan ke mana arahnya — sebelum bicara warna atau kata-kata.</p>
+
+    <div class="purpose-block">
+      <div class="purpose-card">
+        <h3>Purpose</h3>
+        <p>Menjadi partner tepercaya bagi UMKM retail yang tahu harus naik kelas digital, tapi bingung mulai dari mana dan takut kena vendor yang cuma jual janji.</p>
+      </div>
+      <div class="purpose-card">
+        <h3>Mission</h3>
+        <p>Membangun dan merawat ekosistem digital yang benar-benar dipakai dan berdampak — dijelaskan dengan bahasa manusia, bukan jargon teknis.</p>
+      </div>
+    </div>
+
+    <div class="grid-4">
+      <div class="cell"><h4>Jelas, bukan ribet</h4><p>Semua dijelaskan pakai bahasa manusia, bukan istilah teknis yang bikin klien cuma manggut-manggut.</p></div>
+      <div class="cell"><h4>Hasil, bukan delivery</h4><p>Sukses diukur dari dampak nyata ke bisnis klien, bukan sekadar "website sudah jadi".</p></div>
+      <div class="cell"><h4>Hubungan jangka panjang</h4><p>Klien adalah partner yang tumbuh bersama, bukan transaksi sekali jalan.</p></div>
+      <div class="cell"><h4>Jujur soal batasan</h4><p>Kalau tools lain lebih pas dari solusi custom, kami bilang terus terang.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="positioning">
+  <div class="wrap">
+    <div class="section-head"><span class="section-num">02</span><h2>Positioning Statement</h2></div>
+    <div class="positioning">
+      Untuk pemilik <span class="hi">UMKM retail/toko</span> yang ingin naik kelas digital, Nexana Studio adalah <span class="hi">partner digital</span> yang membangun & merawat ekosistem online bisnis mereka — berbeda dari jasa website generik yang jual sekali lalu menghilang.
+    </div>
+    <p class="short-pitch">Versi pendek: "Bantu UMKM retail keluar dari pencatatan manual — dari website jualan sampai sistem yang bikin bisnis jalan lebih rapi."</p>
+  </div>
+</section>
+
+<section id="personality">
+  <div class="wrap">
+    <div class="section-head"><span class="section-num">03</span><h2>Kepribadian & Archetype</h2></div>
+    <div class="archetype-row">
+      <div class="arche-tag">The <span>Sage</span> — penasihat tepercaya</div>
+      <div class="arche-tag">The <span>Magician</span> — pengubah kekacauan jadi sistem</div>
+    </div>
+    <div class="traits">
+      <div class="trait"><div class="num">01</div><div class="name">Straightforward</div></div>
+      <div class="trait"><div class="num">02</div><div class="name">Approachable Expert</div></div>
+      <div class="trait"><div class="num">03</div><div class="name">Growth-Minded</div></div>
+      <div class="trait"><div class="num">04</div><div class="name">Reliable</div></div>
+      <div class="trait"><div class="num">05</div><div class="name">Practical</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="persona">
+  <div class="wrap">
+    <div class="section-head"><span class="section-num">04</span><h2>Ideal Client Persona</h2></div>
+    <div class="persona">
+      <div class="persona-avatar">BT</div>
+      <div class="persona-body">
+        <h4>"Bu/Pak Toko yang Mulai Serius"</h4>
+        <p style="opacity:0.75; font-size:14.5px;">Pemilik UMKM retail dengan omzet mulai stabil — melek WhatsApp & Instagram, tapi awam soal website dan sistem.</p>
+        <div class="persona-facts">
+          <div><b>Masalah Utama</b><p>Pencatatan manual, promosi hanya dari mulut ke mulut, tidak terlihat di Google.</p></div>
+          <div><b>Ketakutan</b><p>Kena vendor mahal yang hasilnya asal, atau beli sistem canggih yang tak terpakai.</p></div>
+          <div><b>Yang Dicari</b><p>Seseorang tepercaya yang menjelaskan dengan gampang & punya bukti nyata.</p></div>
+          <div><b>Usia & Profil</b><p>28–50 tahun, toko fashion, kelontong modern, produk lokal.</p></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="voice">
+  <div class="wrap">
+    <div class="section-head"><span class="section-num">05</span><h2>Voice &amp; Tone</h2></div>
+    <p class="lede">Jelas, hangat, langsung ke poin — percaya diri tanpa sombong.</p>
+
+    <div class="chat-row">
+      <div class="bubble do"><span class="tag">✓ Do</span>"Website ini bukan cuma buat pajangan — begitu jadi, orang yang googling produk kamu bisa langsung nemu dan chat."</div>
+      <div class="bubble dont"><span class="tag">✗ Don't</span>"Kami menyediakan solusi pengembangan aplikasi web yang komprehensif dan scalable."</div>
+    </div>
+    <div class="chat-row">
+      <div class="bubble do"><span class="tag">✓ Do</span>"Kalau butuhnya cuma pajang katalog, kamu belum perlu sistem mahal. Mulai dari paket dasar dulu aja."</div>
+      <div class="bubble dont"><span class="tag">✗ Don't</span>"Kami menawarkan berbagai paket premium dengan fitur unggulan terbaik di kelasnya."</div>
+    </div>
+  </div>
+</section>
+
+<section id="tagline">
+  <div class="wrap">
+    <div class="section-head"><span class="section-num">06</span><h2>Opsi Tagline</h2></div>
+    <div class="tagline-grid">
+      <div class="tagline-card rec"><span class="rec-badge">Rekomendasi</span><p>"Toko Anda, Sistemnya Kami."</p></div>
+      <div class="tagline-card rec"><span class="rec-badge">Rekomendasi</span><p>"Naik Kelas, Bareng Nexana."</p></div>
+      <div class="tagline-card"><p>"Menghubungkan Bisnis Anda ke Dunia Digital."</p></div>
+      <div class="tagline-card"><p>"Dari Manual ke Digital, Kami Temani."</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="visual">
+  <div class="wrap">
+    <div class="section-head"><span class="section-num">07</span><h2>Visual Identity</h2></div>
+
+    <div class="swatches">
+      <div class="swatch"><div class="fill" style="background:#1B2A4A;"></div><div class="label"><b>Navy</b><span>#1B2A4A</span></div></div>
+      <div class="swatch"><div class="fill" style="background:#F2994A;"></div><div class="label"><b>Amber</b><span>#F2994A</span></div></div>
+      <div class="swatch"><div class="fill" style="background:#D9782F;"></div><div class="label"><b>Amber Deep</b><span>#D9782F</span></div></div>
+      <div class="swatch"><div class="fill" style="background:#F7F5F2; border-bottom:1px solid var(--line);"></div><div class="label"><b>Cream</b><span>#F7F5F2</span></div></div>
+      <div class="swatch"><div class="fill" style="background:#2A2A28;"></div><div class="label"><b>Charcoal</b><span>#2A2A28</span></div></div>
+    </div>
+
+    <div class="type-specimen">
+      <div class="type-card"><div class="lbl">Headline — Plus Jakarta Sans</div><div class="sample">Aa Bb Cc<br>0123</div></div>
+      <div class="type-card body-font"><div class="lbl">Body — Inter</div><div class="sample">Dijelaskan dengan bahasa yang kamu ngerti — bukan jargon teknis yang bikin bingung.</div></div>
+    </div>
+  </div>
+</section>
+
+<section id="pillars">
+  <div class="wrap">
+    <div class="section-head"><span class="section-num">08</span><h2>Messaging Pillars</h2></div>
+    <div class="pillars">
+      <div class="pillar"><span class="pnum">Pilar 01</span><p>Bukan sekadar website, tapi sistem yang beneran dipakai.</p></div>
+      <div class="pillar"><span class="pnum">Pilar 02</span><p>Partner jangka panjang, bukan vendor sekali jalan.</p></div>
+      <div class="pillar"><span class="pnum">Pilar 03</span><p>Dijelaskan dengan bahasa yang kamu ngerti.</p></div>
+      <div class="pillar"><span class="pnum">Pilar 04</span><p>Terbukti di bisnis sejenis kamu.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="story">
+  <div class="wrap">
+    <div class="section-head"><span class="section-num">09</span><h2>Brand Story</h2></div>
+    <blockquote>
+      Nexana Studio berawal dari kerja lepas membantu teman dan kenalan bikin website. Dari situ kami sadar satu pola: UMKM bukan butuh website yang canggih-canggih amat — mereka butuh seseorang yang mau dengar masalah mereka dulu, dan yang tetap ada setelah website-nya jadi.
+    </blockquote>
+  </div>
+</section>
+
+<section id="apply">
+  <div class="wrap">
+    <div class="section-head"><span class="section-num">10</span><h2>Catatan Penerapan</h2></div>
+    <ul class="checklist">
+      <li>Website: headline pakai messaging pillar #1/#2, jangan "Jasa Pembuatan Website Murah".</li>
+      <li>Instagram/sosmed: konten edukasi + before-after, tone santai sesuai voice guide.</li>
+      <li>Proposal ke klien: selalu sertakan pesan tentang retainer/pendampingan jangka panjang.</li>
+      <li>Kartu nama/WA Business: tagline pendek + warna primary sebagai identitas konsisten.</li>
+    </ul>
+  </div>
+</section>
+
+<footer>
+  <p>NEXANA STUDIO — BRAND IDENTITY GUIDE — REVISIT TIAP 3 BULAN</p>
+</footer>
+
+</body>
+</html>

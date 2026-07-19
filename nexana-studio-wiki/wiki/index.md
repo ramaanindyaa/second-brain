@@ -3,7 +3,7 @@ type: index
 title: "Index — Nexana Studio"
 description: "Katalog semua halaman di nexana-studio-wiki"
 tags: [index]
-timestamp: 2026-07-05
+timestamp: 2026-07-15
 sources: []
 ---
 
@@ -16,8 +16,13 @@ sources: []
   9 plugin WordPress premium (link Google Drive) untuk proyek klien
 
 ## Concepts
-_(kosong)_
+- [[concepts/paket-layanan-pricing|Paket Layanan & Pricing]] — struktur
+  harga Starter/Growth/Pro, retainer, a la carte, syarat pembayaran (aman
+  dipakai ke klien)
+- [[concepts/strategi-penjualan-internal|Strategi Penjualan (Internal)]] —
+  taktik anchoring/closing terkait pricelist, **internal only**
 
 ## Sources
 - [[sources/nexana-studio-brand-identity|Nexana Studio — Brand Identity Guide]]
 - [[sources/plugin-wordpress-premium|Koleksi Plugin WordPress Premium]]
+- [[sources/nexana-studio-pricelist|Nexana Studio — Pricelist]]

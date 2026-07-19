@@ -24,6 +24,7 @@ yang identik.
 | [client-wiki/](client-wiki/CLAUDE.md) | Freelance WordPress (konteks per-klien eksternal) | initialized, 0 sumber |
 | [finance-wiki/](finance-wiki/CLAUDE.md) | Personal finance (dana darurat, alokasi) | initialized, 0 sumber |
 | [nexana-studio-wiki/](nexana-studio-wiki/CLAUDE.md) | Brand identity & materi bisnis Nexana Studio (milik sendiri, bukan klien) | initialized, 1 sumber |
+| [linux-cachyos-wiki/](linux-cachyos-wiki/CLAUDE.md) | Belajar Linux & CachyOS (baru pindah dari OS lain) | initialized, 0 sumber |
 
 ## Struktur Setiap Wiki (identik di semua domain)
 

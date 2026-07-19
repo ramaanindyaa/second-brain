@@ -3,8 +3,8 @@ type: entity
 title: "Nexana Studio"
 description: "Brand identity studio sendiri (bukan klien) — jasa WordPress/digital partner untuk UMKM retail"
 tags: [entity, brand-identity]
-timestamp: 2026-07-05
-sources: ["raw/Nexana_Studio_Brand_Identity.md"]
+timestamp: 2026-07-15
+sources: ["raw/Nexana_Studio_Brand_Identity.md", "raw/nexana_brand_identity.html"]
 ---
 
 # Nexana Studio
@@ -44,11 +44,12 @@ practical (bukan flashy/buzzword).
 
 ## Target Audience
 
-Persona **"Bu/Pak Toko yang Mulai Serius"**: pemilik UMKM retail omzet mulai
-stabil, usia 28-50, melek WhatsApp/Instagram tapi awam soal
-website/sistem. Masalah utama: pencatatan manual, belum kelihatan di Google,
-sulit kelola stok saat mulai punya reseller/cabang. Takut kena tipu vendor
-atau beli sistem canggih yang berujung nggak dipakai.
+Persona **"Bu/Pak Toko yang Mulai Serius"**: pemilik UMKM retail (toko
+fashion, kelontong modern, produk lokal) omzet mulai stabil, usia 28-50,
+melek WhatsApp/Instagram tapi awam soal website/sistem. Masalah utama:
+pencatatan manual, belum kelihatan di Google, sulit kelola stok saat mulai
+punya reseller/cabang. Takut kena tipu vendor atau beli sistem canggih yang
+berujung nggak dipakai.
 
 ## Voice & Tone
 
@@ -57,34 +58,48 @@ sombong. Tone menyesuaikan kanal (landing page = percaya diri minim jargon;
 chat WA = hangat & banyak bertanya; konten edukasi = santai; proposal resmi =
 profesional tapi manusiawi).
 
-## Nama & Tagline — **BELUM DIPUTUSKAN**
+**Contoh Do & Don't:**
+- ✅ "Website ini bukan cuma buat pajangan — begitu jadi, orang yang
+  googling produk kamu bisa langsung nemu dan chat." / ❌ "Kami menyediakan
+  solusi pengembangan aplikasi web yang komprehensif dan scalable."
+- ✅ "Kalau butuhnya cuma pajang katalog, kamu belum perlu sistem mahal.
+  Mulai dari paket dasar dulu aja." / ❌ "Kami menawarkan berbagai paket
+  premium dengan fitur unggulan terbaik di kelasnya."
+
+## Nama & Tagline — **DECIDED** (2026-07-15)
 
 Nama "Nexana" beresonansi dengan *nexus* (titik penghubung) — dipakai sebagai
-anchor cerita brand. Empat kandidat tagline diajukan di dokumen sumber, belum
-ada yang difinalkan:
-1. "Menghubungkan Bisnis Anda ke Dunia Digital"
-2. "Dari Manual ke Digital, Kami Temani"
-3. "Toko Anda, Sistemnya Kami"
-4. "Naik Kelas, Bareng Nexana"
+anchor cerita brand.
 
-Rekomendasi di dokumen sumber: opsi 3 atau 4 (pendek, gampang diucapkan ulang
-untuk referral mulut-ke-mulut) — **tapi ini rekomendasi draft, bukan keputusan
-final.**
+**Tagline final: "Toko Anda, Sistemnya Kami."** — dikonfirmasi user,
+dipakai live sebagai hero tagline di brand guide (nexana_brand_identity.html).
 
-## Visual Identity — arah warna & tipografi bersifat indikatif ("atau sekitarnya")
+Kandidat lain yang sempat dipertimbangkan (tidak dipilih):
+- "Naik Kelas, Bareng Nexana" — sempat sama-sama direkomendasikan di draft
+- "Menghubungkan Bisnis Anda ke Dunia Digital"
+- "Dari Manual ke Digital, Kami Temani"
+
+## Visual Identity — **DECIDED** (2026-07-15)
 
 | Peran | Warna | Kesan |
 |---|---|---|
-| Primary | Deep Navy/Indigo `#1B2A4A` (approx.) | tepercaya, profesional, tidak dingin |
-| Accent | Warm Amber/Orange `#F2994A` (approx.) | hangat, approachable, energik |
-| Neutral | Off-white `#F7F5F2` / Charcoal `#2E2E2E` | latar bersih, keterbacaan |
+| Primary | Deep Navy/Indigo `#1B2A4A` | tepercaya, profesional, tidak dingin |
+| Accent | Warm Amber/Orange `#F2994A` | hangat, approachable, energik |
+| Accent (deep) | Amber Deep `#D9782F` | shade sekunder untuk hover/emphasis |
+| Neutral (light) | Cream `#F7F5F2` | latar bersih |
+| Neutral (dark) | Charcoal `#2A2A28` | teks, keterbacaan (supersedes nilai draft lama `#2E2E2E`) |
 
-Tipografi: headline sans-serif tegas (arah: Poppins/Manrope/Plus Jakarta
-Sans), body sans-serif nyaman dibaca (arah: Inter/Work Sans).
+Tipografi final: headline **Plus Jakarta Sans**, body **Inter** — narrowed
+dari beberapa opsi draft (Poppins/Manrope untuk headline; Work Sans untuk
+body) ke pilihan tunggal ini.
 
-Konsep logo: simbol abstrak koneksi/simpul (dua bentuk mewakili "toko fisik"
-dan "dunia digital" terhubung), dibentuk jadi inisial "N". Eksplisit hindari
-ikon generik `</>` (terlalu tech/developer-sentris).
+Konsep logo — **masih draft/belum final**, tidak termasuk dalam konfirmasi
+di atas: simbol abstrak koneksi/simpul (dua bentuk mewakili "toko fisik" dan
+"dunia digital" terhubung), diarahkan jadi inisial "N". Eksplisit hindari
+ikon generik `</>` (terlalu tech/developer-sentris). Brand guide HTML
+menampilkan satu contoh eksekusi visual (nav mark: dua lingkaran
+amber+navy terhubung garis diagonal) — ini contoh arah, belum tentu logo
+final.
 
 Gaya foto: foto asli toko/produk client (bukan stock), before-after
 screenshot sebagai bukti visual. Hindari ilustrasi tech-corporate abstrak.
@@ -108,5 +123,6 @@ copy final siap pakai.
   Pembuatan Website Murah" (menurunkan positioning ke level komoditas)
 - Instagram: dominan konten edukasi + before-after
 - Proposal: selalu sertakan pesan retainer/pendampingan jangka panjang
+  (detail tier & harga: [[../concepts/paket-layanan-pricing|Paket Layanan & Pricing]])
 - Dokumen sumber menandai dirinya sendiri sebagai fondasi yang perlu
   direvisit tiap 3 bulan setelah ada data nyata dari client pertama.
